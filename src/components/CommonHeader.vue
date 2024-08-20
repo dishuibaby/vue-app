@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <el-button size="small">
+      <el-button size="small" @click="handleCollapse">
         <el-icon ><Menu /></el-icon>
       </el-button>
       <el-breadcrumb separator="/" class="breadcrumb">
@@ -28,7 +28,14 @@
     </div>
   </div>
 </template>
-<script >
+<script setup>
+import { computed, ref } from "vue";
+import { useAllDataStore } from "@/stores";
+
+const store = useAllDataStore();
+const handleCollapse = () => {
+  store.state.isCollapse = ! store.state.isCollapse;
+}
 
 </script>
 <style lang="less" scoped>
