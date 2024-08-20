@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 function initState() {
     return {
-        isCollapse : true,
+        isCollapse : false
     }
 }
 export const useAllDataStore = defineStore('allData', () => {
